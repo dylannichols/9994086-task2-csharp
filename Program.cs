@@ -44,7 +44,7 @@ namespace _9994086_task2_csharp
             var numberString = string.Join(", ", nums);
             Console.WriteLine($"\n{lineBreak}\n");
             Console.WriteLine($"You numbers were: {numberString}");
-            Console.WriteLine($"The average of these numbers is: {average}");
+            Console.WriteLine($"\nThe average of these numbers is: {average}");
 
             //End the program with blank line and instructions
             Console.ResetColor();
