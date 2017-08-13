@@ -6,7 +6,47 @@ namespace _9994086_task2_csharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Start the program with Clear();
+            Console.Clear();
+            
+            var lineBreak = "-------------------------------------------";
+            Console.WriteLine("This program asks you for a set of ten number then calculates the average.");
+            Console.WriteLine($"\n{lineBreak}\n");
+
+            var input = "";
+            var nums = new double[10];
+            var isNumber = true;
+            for (var i = 0; i < 10; i++)
+            {
+                Console.WriteLine($"Please enter number {i + 1}:");
+                do
+                {
+                    input = Console.ReadLine();
+                    isNumber = double.TryParse(input, out nums[i]);
+                    if (!isNumber)
+                    {
+                        Console.WriteLine("Invalid input. Try again:");
+                    }
+                } while (!isNumber);
+            }
+
+            var sum = 0.0;
+            for (var i = 0; i < nums.Length; i++)
+            {
+                sum += nums[i];
+            }
+            var average = sum / nums.Length;
+
+            var numberString = string.Join(", ", nums);
+            Console.WriteLine($"\n{lineBreak}\n");
+            Console.WriteLine($"You numbers were: {numberString}");
+            Console.WriteLine($"The average of these numbers is: {average}");
+
+            //End the program with blank line and instructions
+            Console.ResetColor();
+            Console.WriteLine();
+            Console.WriteLine("Press <Enter> to quit the program");
+            Console.ReadKey();
         }
     }
 }
